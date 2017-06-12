@@ -1,0 +1,11 @@
+/* implement background color switching based on media queries:
+    - GREEN for smartphones (width < 800px)
+    - BLUE for tablets (800px < width < 1200px)
+    - RED for desktops (width > 1200px)
+*/
+
+.background-switch {
+    position: absolute;
+    left: 0; top: 0; right: 0; bottom: 0;
+    background: #b80000;
+}

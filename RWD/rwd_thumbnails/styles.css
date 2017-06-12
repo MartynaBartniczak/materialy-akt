@@ -1,0 +1,19 @@
+.thumbnail {
+    box-sizing: border-box;
+    border: 0.5em solid #b80000;
+    background: #e90000;
+    line-height: 0em;
+    float: left;
+    width: 16%;
+    min-height: 5em;
+    margin: 0 0.666% 0.666% 0;
+}
+
+.thumbnail:nth-child(6n) {
+    margin-right: 0;
+}
+
+/* implement media queries to
+    -  break after 4th thumbnail when width < 1200px
+    -  break after 3rd thumbnail when width < 800px
+*/

@@ -1,0 +1,272 @@
+	html, body
+	{
+		height: 100%;
+	}
+
+	body
+	{
+		margin: 0px;
+		padding: 0px;
+		background: #2056ac;
+		font-family: 'Questrial', sans-serif;
+		font-size: 12pt;
+		color: rgba(0,0,0,.6);
+	}
+
+
+	h1, h2, h3
+	{
+		margin: 0;
+		padding: 0;
+		color: #404040;
+	}
+
+	p, ol, ul
+	{
+		margin-top: 0;
+	}
+
+	ol, ul
+	{
+		padding: 0;
+		list-style: none;
+	}
+
+	p
+	{
+		line-height: 180%;
+	}
+
+	strong
+	{
+	}
+
+	a
+	{
+		color: #2056ac;
+	}
+
+	a:hover
+	{
+		text-decoration: none;
+	}
+
+
+	.container
+	{
+		margin: 0px auto;
+		width: 1200px;
+	}
+
+
+/*********************************************************************************/
+/* Social Icon Styles                                                            */
+/*********************************************************************************/
+
+	ul.contact
+	{
+		margin: 0;
+		padding: 2em 0em 0em 0em;
+		list-style: none;
+	}
+
+	ul.contact li
+	{
+		display: inline-block;
+		padding: 0em 0.10em;
+		font-size: 1em;
+	}
+
+	ul.contact li span
+	{
+		display: none;
+		margin: 0;
+		padding: 0;
+	}
+
+	ul.contact li a
+	{
+		color: #FFF;
+	}
+
+	ul.contact li a:before
+	{
+		display: inline-block;
+		background: #4C93B9;
+		width: 40px;
+		height: 40px;
+		line-height: 40px;
+		text-align: center;
+		color: rgba(255,255,255,1);
+	}
+
+
+
+/*********************************************************************************/
+/* Heading Titles                                                                */
+/*********************************************************************************/
+
+	.title
+	{
+		margin-bottom: 3em;
+	}
+
+	.title h2
+	{
+		font-size: 2.8em;
+	}
+
+	.title .byline
+	{
+		font-size: 1.1em;
+		color: #6F6F6F#;
+	}
+
+/*********************************************************************************/
+/* Header                                                                        */
+/*********************************************************************************/
+
+	#header-wrapper
+	{
+		background: #2056ac;
+	}
+
+	#header
+	{
+		text-align: center;
+	}
+
+/*********************************************************************************/
+/* Logo                                                                          */
+/*********************************************************************************/
+
+	#logo
+	{
+		padding: 8em 0em 4em 0em;
+	}
+
+	#logo h1
+	{
+		display: block;
+		margin-bottom: 0.20em;
+		padding: 0.20em 0.9em;
+		font-size: 2em;
+	}
+
+	#logo a
+	{
+		text-decoration: none;
+		color: #FFF;
+	}
+
+	#logo span
+	{
+		text-transform: uppercase;
+		font-size: 2em;
+		color: rgba(255,255,255,1);
+	}
+
+	#logo span a
+	{
+		color: rgba(255,255,255,0.8);
+	}
+
+
+/*********************************************************************************/
+/* Banner                                                                        */
+/*********************************************************************************/
+
+	#banner
+	{
+		padding-top: 5em;
+	}
+
+	#banner img {
+		width: 1200px;
+	}
+
+/*********************************************************************************/
+/* Wrapper                                                                       */
+/*********************************************************************************/
+
+
+	.section-wrapper {
+		padding: 0em 0em 5em 0em;
+		background: #FFF;
+	}
+
+/*********************************************************************************/
+/* Welcome                                                                       */
+/*********************************************************************************/
+
+	#welcome
+	{
+		overflow: hidden;
+		padding: 6em 20px 0em 20px;
+		text-align: center;
+	}
+
+
+/*********************************************************************************/
+/* Footer                                                                        */
+/*********************************************************************************/
+
+	#footer
+	{
+		position: relative;
+		overflow: hidden;
+		padding: 5em 0em;
+		background: #E3F0F7;
+		text-align: center;
+	}
+
+
+
+	#footer .fbox
+	{
+		float: left;
+		width: 375px;
+  		margin-right: 36px;
+	}
+
+	#footer .fbox:last-of-type {
+		margin-right: 0;
+	}
+
+	#footer .icon
+	{
+		display: block;
+		margin-bottom: 1em;
+		font-size: 2em;
+	}
+
+
+	#footer .title span
+	{
+		color: rgba(255,255,255,0.4);
+	}
+
+/*********************************************************************************/
+/* Copyright                                                                     */
+/*********************************************************************************/
+
+	#copyright
+	{
+		overflow: hidden;
+		padding: 5em 0em;
+		border-top: 20px solid rgba(255,255,255,0.08);
+		text-align: center;
+	}
+
+	#copyright p
+	{
+		letter-spacing: 1px;
+		font-size: 0.90em;
+		color: rgba(255,255,255,0.6);
+	}
+
+	#copyright a
+	{
+		text-decoration: none;
+		color: rgba(255,255,255,0.8);
+	}

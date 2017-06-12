@@ -1,0 +1,8 @@
+.flexible-media {
+    margin: 1em 0;
+}
+
+.flexible-media img, .flexible-media iframe {
+    max-width: 100%;
+    border: none;
+}
