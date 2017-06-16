@@ -6,9 +6,14 @@
 .background-switch {
     position: absolute;
     left: 0; top: 0; right: 0; bottom: 0;
-    background:green;
+    background:pink;
 }
-@media (min-width:800px) and (max-width:1200px) {
+@media (max-width:800px) {
+    .background-switch {
+        background:green;
+    }
+}
+@media (min-width:801px) and (max-width:1200px) {
     .background-switch {
         background: blue;
     }
