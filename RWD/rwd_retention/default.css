@@ -562,7 +562,7 @@ hr {
 	#box1
 	{
 		float: left;
-		max-width: 354px;
+		width: 354px;
 		margin-right: 24px;
 		padding-right: 30px;
 	}
@@ -570,7 +570,7 @@ hr {
 	#box2
 	{
 		float: left;
-		max-width: 354px;
+		width: 354px;
 		margin-left: 24px;
 		padding-right: 30px;
 	}
@@ -578,7 +578,7 @@ hr {
 	#box3
 	{
 		float: right;
-		max-width: 344px;
+		width: 344px;
 		padding-left: 40px;
 	}
 
@@ -640,9 +640,19 @@ hr {
 	#column4 {
 		padding-right: 3%;
 	}
-	#box1, #box2, #box3 {
-		width: 31%;
+	#box1, #box2 {
+		text-align: center;
+		width: 48%;
 		margin: 0;
+		padding-left: 0;
+		padding-right: 2%;
+	}
+	#box3 {
+		float: none;
+		text-align: center;
+		width: 100%;
+		margin: 0;
+		padding-top: 2%;
 		padding-left: 0;
 		padding-right: 2%;
 	}
