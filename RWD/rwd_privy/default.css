@@ -564,6 +564,15 @@
 		color: #000;
 		background: red;
 	}
+	button #show {
+		display: none;
+	}
+	.show-menu {
+		display: block;
+		width: 100%;
+		margin: auto;
+		text-align: center;
+	}
 
 	@media screen and (max-width: 800px){
 		.container {
@@ -582,6 +591,9 @@
 		}
 		#menu ul li, li a {
 			width: 100%;
+		}
+		button #show {
+			display: block;
 		}
 	}
 	@media screen and (min-width: 800px) and (max-width: 1200px){
