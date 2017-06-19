@@ -56,7 +56,9 @@ a:hover
 .container
 {
 	margin: 0px auto;
-	width: 1200px;
+	width: 100%;
+	max-width:1200px;
+	min-width:300px;
 }
 
 /*********************************************************************************/
@@ -78,7 +80,9 @@ a:hover
 .image-full
 {
 	display: block;
-	width: 100%;
+	/*width: 100%;*/
+	/*max-width:1500px;*/
+	max-width:100%;
 	margin: 0 0 2em 0;
 }
 
@@ -375,7 +379,7 @@ ul.contact li a.icon-rss:before
 #header
 {
 	position: relative;
-	height: 150px;
+	min-height: 150px;
 }
 
 /*********************************************************************************/
@@ -450,11 +454,11 @@ ul.contact li a.icon-rss:before
 	text-align: center;
 }
 
-#menu li a, #menu li span
+#menu li a, #menu li span, .menu-trigger a
 {
 	display: inline-block;
 	margin-left: 1px;
-	padding: 1em 1.5em 1em 1.5em;
+	padding: 1em;
 	letter-spacing: 0.10em;
 	text-decoration: none;
 	font-size: 1em;
@@ -467,13 +471,17 @@ ul.contact li a.icon-rss:before
 {
 }
 
-#menu .current_page_item a
+#menu .current_page_item a, .menu-trigger a
 {
 	background: #1757ae;
 	border-radius: 30px;
 	color: #FFF;
 }
 
+.menu-trigger {
+	display:none;
+	float:right;
+}
 /*********************************************************************************/
 /* Banner                                                                        */
 /*********************************************************************************/
@@ -493,7 +501,7 @@ ul.contact li a.icon-rss:before
 #banner
 {
 	overflow: hidden;
-	width: 1000px;
+	width: 100%;
 	text-align: center;
 	color: rgba(255,255,255,.7);
 	font-size: 1.5em;
@@ -560,7 +568,7 @@ ul.contact li a.icon-rss:before
 	#content
 	{
 		float: left;
-		width: 700px;
+		width: 65%;
 	}
 
 /*********************************************************************************/
@@ -570,7 +578,7 @@ ul.contact li a.icon-rss:before
 	#sidebar
 	{
 		float: right;
-		width: 450px;
+		width: 30%;
 	}
 
 	#stwo-col
@@ -592,13 +600,13 @@ ul.contact li a.icon-rss:before
 	#stwo-col .sbox1
 	{
 		float: left;
-		width: 210px;
+		width: 49%;
 	}
 
 	#stwo-col .sbox2
 	{
 		float: right;
-		width: 210px;
+		width: 49%;
 	}
 
 /*********************************************************************************/
@@ -673,152 +681,12 @@ ul.contact li a.icon-rss:before
 	border-radius: 50%;
 }
 
-.column1,  .column2,  .column3,  .column4
-{
-	width: 282px;
-}
-
-.column1,  .column2
-{
-	float: left;
-	margin-right: 24px;
-}
-
-.column3
-{
-	float: left;
-}
-
-.column4
-{
-	float: right;
-}
-
 #slider-wrapper
 {
 	padding: 6em 0em;
 	background: #DB3256;
 }
 
-#slider
-{
-	margin: 0em auto 0em auto;
-	width: 1200px;
-	position: relative;
-}
-
-#slider .button
-{
-}
-
-#slider .button:hover
-{
-}
-
-#slider .viewer
-{
-	width: 1000px;
-	height: 375px;
-	margin: 0 auto;
-	overflow: hidden;
-}
-
-#slider .viewer .reel
-{
-	display: none;
-	height: 375px;
-}
-
-#slider .viewer .reel .slide
-{
-	position: relative;
-	width: 1000px;
-	height: 375px;
-}
-
-#slider .viewer .reel h2
-{
-	position: absolute;
-	top: 130px;
-	left: 0;
-	width: 1200px;
-	height: 80px;
-	line-height: 80px;
-	background: #111111;
-	text-align: center;
-	opacity: 0.85;
-	font-weight: normal;
-	color: #ffffff;
-	font-size: 2.25em;
-}
-
-#slider .viewer .reel p
-{
-	position: absolute;
-	top: 210px;
-	left: 0;
-	width: 1200px;
-	height: 40px;
-	line-height: 40px;
-	background: #0074C6;
-	text-align: center;
-	opacity: 0.85;
-	font-weight: normal;
-	color: #ffffff;
-	font-size: 1.1em;
-}
-
-#slider .icon
-{
-	font-size: 4em;
-	color: #FFF;
-}
-
-#slider .previous-button
-{
-	position: absolute;
-	top: 150px;
-	left: 0;
-}
-
-#slider .next-button
-{
-	position: absolute;
-	top: 150px;
-	right: 0;
-}
-
-#slider .indicator
-{
-	margin: 30px auto 0 auto;
-}
-
-#slider .indicator ul
-{
-	list-style: none;
-	padding: 0;
-	margin: 0;
-	text-align: center;
-}
-
-#slider .indicator ul li
-{
-	display: inline-block;
-	width: 12px;
-	height: 12px;
-	text-indent: -9999em;
-	background: #c8c8c8;
-	margin: 0 2px 0 2px;
-	border-radius: 8px;
-	border-bottom: solid 1px #ffffff;
-	border-top: solid 1px #909090;
-}
-
-#slider .indicator ul li.active
-{
-	background: #505050;
-	border-top: solid 1px #505050;
-}
 
 /*********************************************************************************/
 /* Footer                                                                        */
@@ -940,4 +808,40 @@ ul.contact li a.icon-rss:before
 .extra2 .ebox2
 {
 	float: right;
+}
+
+
+@media (max-width:800px) {
+	#content, #sidebar {
+		width:100%;
+	}
+
+	/* rozwiazanie nr 1 */
+	/*#menu li {*/
+		/*float:none;*/
+	/*}*/
+
+	/* rozwiazanie nr 2 */
+	/*#menu {*/
+		/*top:10em;*/
+		/*right:auto;*/
+	/*}*/
+
+	/* rozwiazanie nr 2 */
+	.menu-trigger {
+		display:block;
+	}
+	#menu {
+		background:black;
+
+	}
+	#menu li {
+		float:none;
+	}
+	#menu ul {
+		display:none;
+	}
+	#menu.expanded ul {
+		display:block;
+	}
 }
