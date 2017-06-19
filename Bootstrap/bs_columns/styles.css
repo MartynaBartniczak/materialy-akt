@@ -13,3 +13,6 @@
 .sidebar {
     background: #00b800;
 }
+.flexible-media {
+    max-width: 100%;
+}

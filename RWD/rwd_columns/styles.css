@@ -7,10 +7,12 @@
 }
 .content {
     background: #b80000;
+
 }
 .sidebar {
     background: #00b800;
 }
+
 
 @media (min-width:800px) {
     .content {
