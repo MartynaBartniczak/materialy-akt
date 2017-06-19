@@ -1,1 +1,0 @@
-# jfdd7-materialy
