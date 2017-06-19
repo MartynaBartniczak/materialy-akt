@@ -581,6 +581,7 @@
 		}
 		#header {
 			display: none;
+			width: 100%;
 		}
 		#menu {
 			position: static;
