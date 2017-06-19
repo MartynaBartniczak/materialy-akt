@@ -582,7 +582,7 @@
 		#header {
 			display: none;
 		}
-		#menu ul {
+		#menu {
 			position: static;
 			display: none;
 		}

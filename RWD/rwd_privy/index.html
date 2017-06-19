@@ -16,7 +16,8 @@ Released   : 20130902
 	<script type="text/javascript">
         $(document).ready(function(){
             $("button").click(function(){
-                $("#header").addClass("show-menu");
+                $("#menu").toggleClass("show-menu");
+                $("#header").toggleClass("show-menu");
             });
         });
 	</script>
