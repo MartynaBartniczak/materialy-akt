@@ -1,0 +1,142 @@
+.menu {
+    background-color: darkred;
+    text-transform: uppercase;
+}
+
+.navbar-default {
+    background-color: darkred;
+    border: none;
+    color: white;
+    padding: 2em 0;
+}
+
+.navbar-default .navbar-brand {
+    color: white;
+    font-weight: bold;
+    font-size: 2em;
+}
+
+.navbar-default .navbar-nav > li > a {
+    color: white;
+}
+
+.pictures {
+    background-color: black;
+}
+
+.navbar {
+    margin-bottom: 0px;
+}
+
+.pictures > div > div > .img-responsive {
+    padding: 10px;
+    background-color: white;
+    margin-bottom: 20%;
+    margin-top: 20%;
+}
+
+main > div > ul > li > a {
+    color: darkred;
+    text-decoration: underline;
+}
+
+main > div > ul > li > a:hover {
+    text-decoration: none;
+    color: darkred
+}
+
+main > div > div > ul > li {
+    padding-top: 1em;
+    padding-bottom: 1em;
+    border-bottom: 1px solid grey;
+}
+main > div > div > ul > li:last-child {
+    border-bottom: 0;
+}
+main > div > div > h3{
+    border-bottom: 2px solid grey;
+    position: relative;
+}
+main > div > div > h3:after{
+    position: absolute;
+    left: 0;
+    border-bottom: 2px solid red;
+    bottom: -2px   ;
+    width: 2em;
+    content: " ";
+}
+main >div > h2{
+    border-bottom: solid 2px grey;
+    position: relative;
+}
+main >div > h2:after{
+     position: absolute;
+     left: 0;                        
+     border-bottom: 2px solid red;
+     bottom: -2px   ;
+     width: 2em;
+     content: " ";
+
+}
+
+.title {
+    padding-bottom: 4em;
+}
+
+main > div > img {
+    padding-bottom: 3em;
+}
+
+main > div > p {
+    padding-bottom: 2em;
+}
+
+.black {
+    background-color: black;
+}
+
+.icon {
+    text-decoration: none;
+    color: white;
+    font-size: 1.2em;
+    text-transform: uppercase;
+}
+
+.icon-twitter:before {
+    background: #2DAAE4;
+}
+
+.icon-facebook:before {
+    background: #39599F;
+}
+
+.icon-dribbble:before {
+    background: #C4376B;
+}
+
+.icon-tumblr:before {
+    background: #31516A;
+}
+
+.icon-rss:before {
+    background: #F2600B;
+}
+
+ul > li > a > span {
+    margin-left: 0.5em;
+
+}
+
+section > div > div > ul > li > a {
+    color: white;
+}
+
+section > div > div {
+    color: white;
+}
+@media(max-width: 765px){
+ section > div > div > ul > li{
+     display: inline-block;
+     margin: 0 1em;
+ }
+}
