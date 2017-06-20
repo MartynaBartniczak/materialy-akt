@@ -13,3 +13,7 @@
 .sidebar {
     background: #00b800;
 }
+
+img {
+    max-width: 100%;
+}

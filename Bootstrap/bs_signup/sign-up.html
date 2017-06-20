@@ -6,46 +6,46 @@
     <link rel="stylesheet" href="../bootstrap/bootstrap.min.css">
 </head>
 <body>
-<section>
+<section class="container">
     <h1>Sign Up</h1>
     <form class="form-horizontal">
         <div class="form-group">
-            <label for="inputEmail" class="col-sm-2 control-label">Email:</label>
-            <div class="col-sm-10">
+            <label for="inputEmail" class="col-sm-3 control-label">Email:</label>
+            <div class="col-sm-9">
                 <input class="form-control" type="email" id="inputEmail" placeholder="Email">
             </div>
         </div>
         <div class="form-group">
-            <label for="inputPassword" class="col-sm-2 control-label">Password:</label>
-            <div class="col-sm-10">
+            <label for="inputPassword" class="col-sm-3 control-label">Password:</label>
+            <div class="col-sm-9">
             <div>
                 <input class=form-control type="password" id="inputPassword" placeholder="Password">
             </div>
         </div>
         <div class="form-group">
-            <label for="confirmPassword" class="col-sm-2 control-label">Confirm Password:</label>
-            <div class="col-sm-10"
+            <label for="confirmPassword" class="col-sm-3 control-label">Confirm Password:</label>
+            <div class="col-sm-9">
             <div>
                 <input class="form-control" type="password" id="confirmPassword" placeholder="Confirm Password">
             </div>
         </div>
         <div class="form-group">
-            <label for="firstName" class="col-sm-2 control-label">First Name:</label>
-            <div class="col-sm-10"
+            <label for="firstName" class="col-sm-3 control-label">First Name:</label>
+            <div class="col-sm-9">
             <div>
                 <input class="form-control" type="text" id="firstName" placeholder="First Name">
             </div>
         </div>
         <div class="form-group">
-            <label for="lastName" class="col-sm-2 control-label">Last Name:</label>
-            <div class="col-sm-10"
+            <label for="lastName" class="col-sm-3 control-label">Last Name:</label>
+            <div class="col-sm-9"
             <div>
                 <input class="form-control" type="text" id="lastName" placeholder="Last Name">
             </div>
         </div>
         <div class="form-group">
-            <label for="phoneNumber" class="col-sm-2 control-label">Phone:</label>
-            <div class="col-sm-10"
+            <label for="phoneNumber" class="col-sm-3 control-label">Phone:</label>
+            <div class="col-sm-9"
             <div class="form-group">
                 <input class="form-control" type="tel" id="phoneNumber" placeholder="Phone Number">
             </div>
@@ -53,13 +53,14 @@
         <div class="form-group">
             <div class="col-sm-offset-1 col-sm-10">
             <label class="control-label">Date of Birth:</label>
-            <select class="form-control-static">
+                <div class="col-sm-3">
+                    <select class="form-control"></div>
                 <option>Date</option>
             </select>
-            <select class="form-control-static">
+            <select class="form-control">
                 <option>Month</option>
             </select>
-            <select class="form-control-static">
+            <select class="form-control">
                 <option>Year</option>
             </select>
         </div>
@@ -69,10 +70,10 @@
         </div>
         </div>
         <div class="form-group">
-            <label for="ZipCode">Zip Code:</label>
+            <label for="ZipCode" class="col-sm-3">Zip Code:</label>
             <input type="text" id="ZipCode" placeholder="Zip Code">
         </div>
-        <div class="radio">
+        <div class="form-group">
             <label>Gender:</label>
             <label>
                 <input type="radio" name="genderRadios" value="male"> Male
@@ -81,7 +82,9 @@
                 <input type="radio" name="genderRadios" value="female"> Female
             </label>
         </div>
-        <div class="checkbox">
+        <div class="form-group">
+            <div class="col-sm-9">
+                <div class="checkbox">
             <label>
                 <input type="checkbox" value="news"> Send me latest news and updates.
             </label>
@@ -93,9 +96,10 @@
                 </label>
             </div>
         </div>
-        <div>
-            <input type="submit" value="Submit">
-            <input type="reset" value="Reset">
+        <div class="form-group">
+            <div class="col-sm-9 col-sm-offset-3">
+            <input class="btn btn-success" type="submit" value="Submit">
+            <input class="btn btn-info" type="reset" value="Reset">
         </div>
     </form>
 </section>
