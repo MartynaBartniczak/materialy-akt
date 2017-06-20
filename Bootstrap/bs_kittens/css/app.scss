@@ -1,0 +1,160 @@
+*, *:before, *:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+@import '_variables.scss';
+
+@mixin scale($scale) {
+  -webkit-transform: scale($scale);
+  -moz-transform: scale($scale);
+  -o-transform: scale($scale);
+  -ms-transform: scale($scale);
+  transform: scale($scale);
+}
+body {
+  background: $background-color;
+  font-family: 'Didact Gothic', sans-serif;
+  margin: 0;
+}
+
+a {
+  color: $secondary-color;
+  &:hover {
+    color: $third-color;
+  }
+}
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.wrapper {
+  margin: 0 auto;
+  width: 1200px;
+}
+
+.header {
+  background: $third-color;
+  border-bottom: 10px solid #fff;
+  padding: 1em;
+  nav {
+    float: right;
+  }
+  ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  li {
+    display: inline-block;
+}
+}
+
+.footer {
+  background: $secondary-color;
+  border-top: 10px solid $background-color;
+  .copy {
+    color: #D9D0CB;
+    float: right;
+    margin: 1em 0;
+  }
+  nav {
+    float: left;
+  }
+  a {
+    color: $third-color;
+    display: block;
+    padding: 1em;
+  }
+  &:hover {
+    color: #D9D0CB;
+  }
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  li {
+    display: inline-block;
+}
+}
+.kittens {
+  list-style-type: none;
+  padding: 0;
+  li {
+    border-radius: 20px;
+    float: left;
+    margin-bottom: 2em;
+    text-align: center;
+    width: 300px;
+    &:hover {
+      @include scale (1.3);
+    }
+  }
+  label {
+    font-weight: bold;
+  }
+  img {
+    border: 10px solid #fff;
+    border-radius: 20px;
+  }
+}
+.subcontent {
+  background: #fff;
+  padding: 2em 0 3em;
+}
+
+.search {
+  float: right;
+}
+
+.news, .events, .location {
+  float: left;
+  padding-right: 4em;
+  width: 40%;
+}
+
+.news, .events  {
+  ul {
+    list-style-type: none;
+    padding: 0;
+  }
+}
+
+.news li, .events li {
+  border-bottom: 1px dotted $background-color;
+  margin-bottom: 1em;
+  padding-bottom: 1em;
+  padding-right: 1em;
+}
+
+.news li a, .events li a {
+  font-size: 1.25em;
+  text-decoration: none;
+}
+
+.news .btn, .events .btn {
+  color: $background-color;
+  font-size: 1em;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.news .btn:hover, .events .btn:hover {
+  color: $secondary-color;
+}
+
+.location {
+  padding-right: 0;
+  width: 20%;
+  dt {
+    color: $secondary-color;
+    font-weight: bold;
+  }
+  dd {
+    margin: 0;
+  }
+}
+
