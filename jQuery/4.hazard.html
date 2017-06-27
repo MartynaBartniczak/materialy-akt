@@ -8,11 +8,10 @@
 
 <script src="lib/jquery-2.1.4.min.js"></script>
 <script>
-	/* Popraw kod poniżej w taki sposób, aby elementy o klasie "isa" zostały ukryte */
+	$(document).ready(function() {
+	    $('.isa').slideUp(1000).slideDown(1000).fadeOut(500);
+	});
 
-	$('.isa').slideUp(1000);
-	$('.isa').slideDown(1000);
-	$('.isa').fadeOut(500);
 
 </script>
 

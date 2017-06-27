@@ -12,3 +12,6 @@
 .green-background {
     background-color: greenyellow;
 }
+.trener.green-background span {
+    display:inline !important;
+}

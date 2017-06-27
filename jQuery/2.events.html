@@ -14,10 +14,13 @@
 <p class="nie-klikalny">Element 6</p>
 
 
-<script src="../lib/jquery-2.1.4.min.js"></script>
-
-
+<script src="lib/jquery-2.1.4.min.js"></script>
 <script>
+	$('.klikalny').dblclick(function(){
+	    $(this).hide();
+	});
+
+
 		 /*
 		 	1. Używając jQuery dodaj obsługę zdarzenia double click
 		 		na elementach z klasą 'klikalny'.

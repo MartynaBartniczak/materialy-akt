@@ -5,8 +5,29 @@
 	<title>5.form</title>
 </head>
 <body>
-
+<script src="lib/jquery-2.1.4.min.js"></script>
 <script>
+
+	$('body').prepend($('<p id="message">...</p>'));
+	$('body').append($('<form></form>'));
+		$('form').append($('<label>first</label>'))
+    	.append($('<label>second</label>'))
+    	.append($('<label>third</label>'))
+    	.append($('<input class="send" type="button" value="send"></input>'));
+    	$('label:nth-child(1)').prepend($('<input type="radio" />').attr('name', 'field').val(1));
+    	$('label:nth-child(2)').prepend($('<input type="radio" />').attr('name', 'field').val(2));
+    	$('label:nth-child(3)').prepend($('<input type="radio" />').attr('name', 'field').val(3));
+
+
+    	$('.send').click(function(event) {
+    	    event.preventDefault();
+
+    	    var value = $('input[name=field]:checked').val();
+			$('#message').text(value == undefined ? 'nic nie wybrałem' : 'wybrałem ' + value);
+
+
+		});
+
 	/*
 	 Z użyciem jQuery wykonaj następujące czynności:
 	 1. stwórz listę 3 radiobuttonów z etykietami odpowiednio: first, second, third
