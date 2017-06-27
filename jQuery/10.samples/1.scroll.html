@@ -95,6 +95,13 @@
 <a href='#top'>Go Top</a>
 
 <script type="text/javascript">
+
+    $('#top').on('click', 'a', function(event){
+        event.preventDefault();
+        $('body').animate({
+            scrollTop: $($.attr(this, 'href')).offset().top
+        }, 800);
+    });
     /*
     Za pomocą jQuery wykonaj animację scrollowania strony na samą górę, po kliknięciu Go Top.
      */
