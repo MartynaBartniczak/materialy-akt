@@ -1,0 +1,7 @@
+.control-label {
+    color:red;
+}
+.form-control {
+    border-color:blue;
+    border-radius:0;
+}
