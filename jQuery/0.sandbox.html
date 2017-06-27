@@ -17,6 +17,17 @@
 <input name="field" value="..." />
 <textarea>...</textarea>
 
+<ul>
+	<li><b>1</b></li>
+	<li class="test">2</li>
+	<li class="test">3</li>
+	<li>4</li>
+	<li>5</li>
+	<li>6</li>
+	<li>7</li>
+	<li>8</li>
+</ul>
+
 
 
 
@@ -24,11 +35,24 @@
 <script>
 	/* tutaj możesz testować różne pomysły */
 
-	console.log('1');
-    $(document).ready( function() {
-        console.log('2');
+//	console.log('1');
+//    $(document).ready( function() {
+//        console.log('2');
+//    });
+//    console.log('3');
+
+
+
+
+    $( "li" ).each(function(index) {
+        if (index%2==0)
+            console.log($(this).text());
     });
-    console.log('3');
+
+    var evenItems = $( "li" ).map(function(index) {
+        if (index%2==0) return $(this).text();
+    });
+    console.log(evenItems);
 
 </script>
 
