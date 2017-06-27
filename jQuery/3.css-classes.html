@@ -11,15 +11,15 @@ Trenerzy
 <ul>
 	<li class="isa trener">
         Mateusz
-        <span class="opis" style="display:none">- Trener JavaScript</span>
+        <span class="opis">- Trener JavaScript</span>
     </li>
 	<li class="isa trener">
         Paweł
-        <span class="opis" style="display:none">- Trener JavaScript</span>
+        <span class="opis">- Trener JavaScript</span>
     </li>
 	<li class="isa trener">
         Bartosz
-        <span class="opis" style="display:none">- Trener JavaScript</span>
+        <span class="opis">- Trener JavaScript</span>
     </li>
 </ul>
 Uczestnicy
@@ -43,6 +43,13 @@ Uczestnicy
 	 Do kolorowania na zielono używamy klasy 'green-background'
 	 (patrz plik style/base.css)
 	 */
+
+	$('.isa').click(function() {
+		$('.isa').removeClass('green-background');
+		$(this).addClass('green-background');
+	});
+
+
 
 </script>
 

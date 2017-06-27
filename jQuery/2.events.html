@@ -23,9 +23,15 @@
 		 	2. Po dwukrotnym kliknięciu chowamy element
 		 */
 
-		 $('p.klikalny').dblclick(function() {
-			 $(this).hide();
-		 });
+//		 $('p.klikalny').dblclick(function() {
+//			 $(this).hide();
+//		 });
+
+		 function hideElement() {
+		     console.log(this);
+             $(this).hide();
+		 }
+         $('p.klikalny').dblclick(hideElement);
 
 
 </script>

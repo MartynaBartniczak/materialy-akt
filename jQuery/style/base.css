@@ -12,3 +12,9 @@
 .green-background {
     background-color: greenyellow;
 }
+.opis {
+    display:none;
+}
+.green-background .opis {
+    display:inline;
+}
