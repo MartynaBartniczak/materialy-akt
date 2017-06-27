@@ -63,6 +63,10 @@
     /*
     Za pomocą jQuery policz wiersze i kolumny i wyświetl ich liczbę w konsoli.
      */
+    var $numberOfColumns =$('tr:first-child').children().length;
+    var $numberOfDatas = $('tr').length;
+    console.log('Ilosc kolumn:' + "\n" +$numberOfColumns);
+    console.log('Ilość wierszy:'+$numberOfDatas)
 
 
 </script>

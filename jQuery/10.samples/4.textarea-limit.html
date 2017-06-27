@@ -23,7 +23,12 @@
     /*
      Ogranicz liczbę znaków możliwych do wpisania w textarea. Po każdym postawionym znaku aktualizuj informację o liczbie pozostałych znaków do użycia
      */
+    $('#textarea').prop('maxlength', 15);
 
+    $('#textarea').keyup(function () {
+        var $actualLength = $(this).val().length;
+        $('label').text($actualLength);
+    })
 
 </script>
 </body>

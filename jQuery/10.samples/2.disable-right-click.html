@@ -11,7 +11,10 @@
     /*
     Zablokuj możliwość otwierania menu kontekstowego (prawy klawisz myszy) na stronie i zamiast tego pokaż alert z komunikatem "blokada prawego przycisku"
      */
-
+$(document).contextmenu('*', function(event){
+//    event.preventDefault();
+    alert("blokada prawego przycisku");
+})
 
 </script>
 </body>

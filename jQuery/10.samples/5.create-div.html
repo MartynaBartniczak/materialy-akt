@@ -7,15 +7,19 @@
     <title>5.create-div</title>
 </head>
 <body>
-<p>This domain is established to be used for illustrative examples in documents. You may use this domain in examples without prior coordination or asking for permission.</p>
+<p>This domain is established to be used for illustrative examples in documents.
+    You may use this domain in examples without prior coordination or asking for permission.</p>
 <input type="button" value="Click to add new division" onclick="new_div()" />
 
 <script type="text/javascript">
     /*
-     Zaimplementuj funkcję new_div(), która stworzy i doda <div> o id="div", klasie "divClass", zawartości tekstowej (pogrubionej) o treści "Nowy Element" oraz ze stylem wpisanym "color:green"
+     Zaimplementuj funkcję new_div(), która stworzy i doda <div> o id="div", klasie "divClass",
+     zawartości tekstowej (pogrubionej) o treści "Nowy Element" oraz ze stylem wpisanym "color:green"
      */
-
-
+var new_div = function () {
+    $('body').append('<div>').attr('id','div').attr('Class', 'divClass').attr('style', 'color:green').html('<b>Nowy Element</b>');
+};
+new_div();
 </script>
 </body>
 </html>
