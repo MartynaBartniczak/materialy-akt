@@ -18,6 +18,27 @@
 	 */
 
 
+	$('#rectangle').click(function() {
+	    var newWidth = parseInt($(this).css('width'))*2;
+	    var newHeight = parseInt($(this).css('height'))*2;
+
+		$(this).animate({
+            width: newWidth,
+            height: newHeight
+        }, 1500, function(){
+            console.log('zakonczylem animacje');
+        });
+
+        $(this).animate({
+            width: newWidth,
+            height: 0
+        }, 1500, function(){
+            console.log('zakonczylem animacje');
+        })
+	});
+
+
+
 
 </script>
 

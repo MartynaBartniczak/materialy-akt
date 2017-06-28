@@ -25,7 +25,18 @@
 
 <body>
 
-<div id="cards"></div>
+
+<select name="ageFilter">
+	<option>30</option>
+	<option>35</option>
+	<option selected>40</option>
+</select>
+
+
+<div id="cards">
+
+
+</div>
 
 <script src="lib/jquery-2.1.4.min.js"></script>
 
@@ -144,9 +155,9 @@
             "email": "whiteblackwell@turnling.com"
         },
         {
-            "firstName": "Anna",
-            "lastName": "Schultz",
-            "gender": "female",
+            firstName: "Anna",
+            lastName: "Schultz",
+            gender: "female",
             "age": 28,
             "company": "STEELFAB",
             "email": "annaschultz@steelfab.com"
@@ -166,10 +177,73 @@
             "age": 32,
             "company": "VISUALIX",
             "email": "audraodonnell@visualix.com"
+        },
+        {
+            "firstName": "Audra",
+            "lastName": "Odonnell",
+            "gender": "female",
+            "age": 32,
+            "company": "VISUALIX",
+            "email": "audraodonnell@visualix.com"
+        },
+        {
+            "firstName": "Audra",
+            "lastName": "Odonnell",
+            "gender": "female",
+            "age": 32,
+            "company": "VISUALIX",
+            "email": "audraodonnell@visualix.com"
+        },
+        {
+            "firstName": "Audra",
+            "lastName": "Odonnell",
+            "gender": "female",
+            "age": 32,
+            "company": "VISUALIX",
+            "email": "audraodonnell@visualix.com"
+        },
+        {
+            "firstName": "Audra",
+            "lastName": "Odonnell",
+            "gender": "female",
+            "age": 32,
+            "company": "VISUALIX",
+            "email": "audraodonnell@visualix.com"
+        },
+        {
+            "firstName": "Audra",
+            "lastName": "Odonnell",
+            "gender": "female",
+            "age": 32,
+            "company": "VISUALIX",
+            "email": "audraodonnell@visualix.com"
+        },
+        {
+            "firstName": "Audra",
+            "lastName": "Odonnell",
+            "gender": "female",
+            "age": 32,
+            "company": "VISUALIX",
+            "email": "audraodonnell@visualix.com"
+        },
+        {
+            "firstName": "Audra",
+            "lastName": "Odonnell",
+            "gender": "female",
+            "age": 32,
+            "company": "VISUALIX",
+            "email": "audraodonnell@visualix.com"
+        },
+        {
+            "firstName": "Audra",
+            "lastName": "Odonnell",
+            "gender": "female",
+            "age": 32,
+            "company": "VISUALIX",
+            "email": "audraodonnell@visualix.com"
         }
     ];
 
-    var minAge = 30;
 
 
 	/*******************************/
@@ -190,13 +264,30 @@
 	 */
 	/*******************************/
 
+    function loadPeople() {
+        $('#cards').empty();
+        var minAge = $('select[name=ageFilter]').val();
+
+        people.forEach(function(person, index) {
+            if (person.age >= minAge) {
+                $('#cards').append(
+                    $('<div>')
+                        .addClass('ppl-card')
+                        .append($('<h1>').addClass('ppl-firstName').text(person.firstName))
+                        .append($('<h2>').addClass('ppl-lastName').text(person.lastName))
+                        .append($('<h3>').addClass('ppl-gender').text(person.gender))
+                        .append($('<h4>').addClass('ppl-age').text(person.age))
+                );
+            }
+        })
+    }
 
 
+    $('select[name=ageFilter]').change(loadPeople);
+    loadPeople();
 
 
-
-    console.log(minAge);
-    console.log(people);
+//    console.log(people);
 
 </script>
 
