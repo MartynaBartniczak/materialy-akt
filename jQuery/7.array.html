@@ -6,8 +6,11 @@
 </head>
 <body>
 
-<div id="heroes"></div>
+<div id="heroes">
 
+</div>
+
+<script src="lib/jquery-2.1.4.min.js"></script>
 <script>
 
     var heroes = ["Batman", "Robin", "Freeze", "Riddler"];
@@ -18,6 +21,31 @@
 	 2. dodaj do listy elementy <li> z tablicy heroes
 	 3. każdemu elementowi listy dodaj klasę css o nazwie "hero"
 	*/
+
+	$('#heroes').append($('<ul>'));
+
+
+	for (var i=0; i<heroes.length; i++) {
+        $('ul').append($('<li>').addClass('hero').text(heroes[i]));
+    }
+
+    heroes.forEach(function(hero) {
+        $('ul').append($('<li>').addClass('hero').text(hero));
+    });
+
+	i=0;
+	while (i<heroes.length) {
+        $('ul').append($('<li>').addClass('hero').text(heroes[i]));
+        i++;
+	}
+
+    i=0;
+	do {
+        $('ul').append($('<li>').addClass('hero').text(heroes[i]));
+        i++;
+	}
+	while(i<heroes.length)
+
 
 
 </script>

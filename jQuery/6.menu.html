@@ -1,54 +1,96 @@
 <!DOCTYPE html>
 <html>
 <head lang="en">
-	<meta charset="UTF-8">
-	<title>6.menu</title>
+    <meta charset="UTF-8">
+    <title>6.menu</title>
+    <style type="text/css">
+        a:before {
+            content: '- ';
+            color: red;
+        }
+
+        a.collapsed:before {
+            content: '+ ';
+            color: red;
+        }
+    </style>
 </head>
 <body>
 
+
 <ul>
-	<li>
-		MENU
-		<ul>
-			<li>
-				strona główna
-			</li>
-			<li>
-				produkty
-				<ul>
-					<li>produkt A</li>
-					<li>produkt B</li>
-					<li>produkt C</li>
-				</ul>
-			</li>
-			<li>
-				sklepy
-				<ul>
-					<li>sklep 1</li>
-					<li>sklep 2</li>
-					<li>sklep 3</li>
-				</ul>
-			</li>
-			<li>
-				firma
-				<ul>
-					<li>informacje</li>
-					<li>kariera</li>
-					<li>kontakt</li>
-				</ul>
-			</li>
-		</ul>
-	</li>
+    <li>
+        <a href="">MENU</a>
+        <ul>
+            <li>
+                strona główna
+            </li>
+            <li>
+                <a href="">produkty</a>
+                <ul>
+                    <li>produkt A</li>
+                    <li>produkt B</li>
+                    <li>produkt C</li>
+                </ul>
+            </li>
+            <li>
+                <a href="">sklepy</a>
+                <ul>
+                    <li>sklep 1</li>
+                    <li>sklep 2</li>
+                    <li>sklep 3</li>
+                </ul>
+                <!--<p>...</p>-->
+            </li>
+            <li>
+                <a href="">firma</a>
+                <ul>
+                    <li>informacje</li>
+                    <li>kariera</li>
+                    <li>kontakt</li>
+                </ul>
+            </li>
+        </ul>
+    </li>
 </ul>
 
 
+<script src="lib/jquery-2.1.4.min.js"></script>
 <script>
-	/*
-	 Z użyciem jQuery zamień powyższe listy w rozwijane menu, tj.:
-	 1. kliknięcie w nadrzędny element zwija wszystkie podrzędne
-	 2. kliknięcie w zwiniętą gałąź rozwija wszystkie elementy najblizszego poziomu (1 poziom wgłąb)
-	 3. przy zwiniętej pozycji pokazuj znaczek + a przy rozwiniętej -
-	*/
+    /*
+     Z użyciem jQuery zamień powyższe listy w rozwijane menu, tj.:
+     1. kliknięcie w nadrzędny element zwija wszystkie podrzędne
+     2. kliknięcie w zwiniętą gałąź rozwija wszystkie elementy najblizszego poziomu (1 poziom wgłąb)
+     3. przy zwiniętej pozycji pokazuj znaczek + a przy rozwiniętej -
+     */
+
+
+    $('a').click(function (event) {
+        event.preventDefault(); // zatrzymac dzialanie przegladarki 'href=...'
+
+        if ($(this).siblings('ul:visible').length > 0) {
+            $(this).parent()
+                .find('ul')
+                .hide(100)
+                .siblings('a')
+                .addClass('collapsed');
+        }
+        else {
+            $(this)
+                .removeClass('collapsed')
+                .siblings()
+                .show(100);
+        }
+
+//        if ($(this).siblings('.expanded').length>0)
+//            $(this).siblings().removeClass('expanded').hide(100);
+//        else
+//            $(this).siblings().addClass('expanded').show(100);
+
+
+    });
+
+
 </script>
 
 </body>

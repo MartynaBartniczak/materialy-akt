@@ -50,9 +50,10 @@
     });
 
     var evenItems = $( "li" ).map(function(index) {
-        if (index%2==0) return $(this).text();
+        if (index%2==0)
+            return $(this).text();
     });
-    console.log(evenItems);
+    console.log('lista', evenItems);
 
 </script>
 

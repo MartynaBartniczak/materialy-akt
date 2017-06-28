@@ -7,7 +7,7 @@
 <body>
 
 
-<!--nie wysyla automatycznie-->
+<!--NIE wysyla automatycznie-->
 <!--<input type="button" />-->
 
 <!--wysyłają formularz automatycznie-->
@@ -42,7 +42,7 @@
         .append($('<label>').text('third').prepend($('<input type="radio">').attr('name', 'field')))
         .append('<input type="submit" id="send" value="send"/>')
 
-    $('label:nth-child(1) input').val(1)
+    $('label:nth-child(1) input').val(1); // identycznie jak ".attr('value', 1);"
     $('label:nth-child(2) input').val(2)
     $('label:nth-child(3) input').val(3)
 
