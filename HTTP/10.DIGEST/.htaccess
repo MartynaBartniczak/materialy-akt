@@ -1,0 +1,6 @@
+AuthType DIGEST
+AuthName "infoshare.pl"
+AuthDigestDomain /
+AuthDigestProvider file
+AuthUserFile "/usr/local/apache2/htdocs/.httpasswd"
+Require valid-user

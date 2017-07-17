@@ -1,0 +1,4 @@
+AuthType Basic
+AuthName "TEST"
+AuthUserFile "/usr/local/apache2/htdocs/.httpasswd"
+Require valid-user
