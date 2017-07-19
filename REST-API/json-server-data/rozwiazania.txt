@@ -1,0 +1,28 @@
+Uwaga! zamień URL i PORT na odpowiedni, np. http://localhost:3000/
+
+Zadanie 8
+1. http://10.58.75.119:3000/posts?userId=2 lub http://10.58.75.119:3000/users/2/posts
+2. http://10.58.75.119:3000/posts/?id=3&id=4&id=5
+3. http://10.58.75.119:3000/users?address.city=Gwenborough
+
+Zadanie 9
+1. http://10.58.75.119:3000/posts?_limit=14
+2. http://10.58.75.119:3000/posts?_start=20&_end=30
+3. http://10.58.75.119:3000/posts?_sort=userId&_order=DESC
+4. http://10.58.75.119:3000/comments?_sort=name&_page=6&_limit=20
+
+Zadanie 10
+1. http://10.58.75.119:3000/posts?id_ne=1
+2. http://10.58.75.119:3000/albums?title_like=impedit lub http://10.58.75.119:3000/albums?q=impedit
+3. http://10.58.75.119:3000/users?q=face
+
+Zadanie 11
+1. POST na http://10.58.75.119:3000/users (z parametrami name, username, email)
+2. POST na http://10.58.75.119:3000/posts (z parametrami title, body, userId)
+3. POST na http://10.58.75.119:3000/comments (z parametrami name, email, body, postId)
+
+Zadanie 12
+1.
+2.
+3.
+4.

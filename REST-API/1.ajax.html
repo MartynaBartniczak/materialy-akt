@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>1.ajax</title>
+</head>
+<body>
+
+<script src="lib/jquery-3.1.1.min.js"></script>
+<script>
+
+    $.ajax({
+        url: "http://localhost:3000/users/38",
+        method: "GET",
+        dataType: "json",
+        // http status = 2xx
+        success: function(result, status, response){
+            console.log(response.status);
+        },
+        // http status != 2xx
+        error: function(res) {
+            console.log('-- error --', res)
+        }
+    });
+
+
+    $.ajax({
+        url: "http://localhost:3000/users",
+        method: "POST",
+        data: {
+            name:'infoshare',
+            username:'isa'
+        },
+        dataType: "json",
+        // http status = 2xx
+        success: function(result, status, response){
+            console.log('Witamy użytkownika: ', result.name);
+        },
+        // http status != 2xx
+        error: function(res) {
+            console.log('Użytkownik nie został założony (status=', res.status);
+        }
+    });
+
+
+
+</script>
+
+
+
+</body>
+</html>
