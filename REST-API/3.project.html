@@ -39,14 +39,32 @@
 
 <script type="text/javascript">
 
-    $('#userList').append(
-        $('<tr>')
-            .append($('<td>').text('1'))
-            .append($('<td>').text('Jan Kowalski'))
-            .append($('<td>').text('janek'))
-            .append($('<td>').text('janek@gmail.com'))
-            .append('<button>E</button><button>D</button>')
-    );
+
+    fetch('http://localhost:3000/users', {
+        method: 'GET'
+    }).then(function(response) {
+        return response.json();
+    }).then(function(data) {
+        data.forEach(function(user) {
+            $('#userList').append(
+                $('<tr>')
+                    .append($('<td>').text(user.id))
+                    .append($('<td>').text(user.name))
+                    .append($('<td>').text(user.username))
+                    .append($('<td>').text(user.email))
+                    .append('<button>E</button><button>D</button>')
+            );
+        });
+    }).catch(function(error) {
+        console.log('error-get', error);
+    });
+
+
+
+
+
+
+
 
 
 </script>
