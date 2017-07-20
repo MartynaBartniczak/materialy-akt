@@ -7,14 +7,14 @@
     <script src="lib/3.project.js"></script>
     <style type="text/css">
         #editHeader, #saveBtn {
-            display:none;
+            display: none;
         }
     </style>
 </head>
 <body>
 
 
-<table>
+<table id="userList">
     <tr>
         <th>id</th>
         <th>name</th>
@@ -22,28 +22,34 @@
         <th>email</th>
         <th></th>
     </tr>
-    <tr>
-        <td>1</td>
-        <td>Jan Kowalski</td>
-        <td>janek</td>
-        <td>janek@gmail.com</td>
-        <td><button>E</button><button>D</button></td>
-    </tr>
 </table>
 
 
 <h1 id="addHeader">Add new user</h1>
 <h1 id="editHeader">Edit user</h1>
 <form>
-    <input type="hidden" name="id" />
-    <label>name</label> <input name="name" /><br/>
-    <label>username</label> <input name="username" /><br/>
-    <label>email</label> <input name="email" /><br/>
+    <input type="hidden" name="id"/>
+    <label>name</label> <input name="name"/><br/>
+    <label>username</label> <input name="username"/><br/>
+    <label>email</label> <input name="email"/><br/>
     <button id="addBtn">add</button>
     <button id="saveBtn">save</button>
 </form>
 
 
+<script type="text/javascript">
+
+    $('#userList').append(
+        $('<tr>')
+            .append($('<td>').text('1'))
+            .append($('<td>').text('Jan Kowalski'))
+            .append($('<td>').text('janek'))
+            .append($('<td>').text('janek@gmail.com'))
+            .append('<button>E</button><button>D</button>')
+    );
+
+
+</script>
 
 </body>
 </html>
