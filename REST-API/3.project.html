@@ -5,9 +5,43 @@
     <title>3.project</title>
     <script src="lib/jquery-3.1.1.min.js"></script>
     <script src="lib/3.project.js"></script>
+    <style type="text/css">
+        #editHeader, #saveBtn {
+            display:none;
+        }
+    </style>
 </head>
 <body>
 
+
+<table>
+    <tr>
+        <th>id</th>
+        <th>name</th>
+        <th>username</th>
+        <th>email</th>
+        <th></th>
+    </tr>
+    <tr>
+        <td>1</td>
+        <td>Jan Kowalski</td>
+        <td>janek</td>
+        <td>janek@gmail.com</td>
+        <td><button>E</button><button>D</button></td>
+    </tr>
+</table>
+
+
+<h1 id="addHeader">Add new user</h1>
+<h1 id="editHeader">Edit user</h1>
+<form>
+    <input type="hidden" name="id" />
+    <label>name</label> <input name="name" /><br/>
+    <label>username</label> <input name="username" /><br/>
+    <label>email</label> <input name="email" /><br/>
+    <button id="addBtn">add</button>
+    <button id="saveBtn">save</button>
+</form>
 
 
 

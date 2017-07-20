@@ -6,46 +6,82 @@
 </head>
 <body>
 
+
+<h1>Formularz</h1>
+
+<form>
+    username: <input name="username"/>
+    <button>send</button>
+</form>
+
+<p></p>
+
 <script src="lib/jquery-3.1.1.min.js"></script>
 <script>
 
     $.ajax({
-        url: "http://localhost:3000/users/38",
-        method: "GET",
+        url: "http://localhost:3000/users/1",
+        method: "DELETE",
         dataType: "json",
         // http status = 2xx
-        success: function(result, status, response){
-            console.log(response.status);
+        success: function (result, status, response) {
+            console.log(result, status, response);
         },
         // http status != 2xx
-        error: function(res) {
+        error: function (res) {
             console.log('-- error --', res)
         }
     });
 
 
+
     $.ajax({
-        url: "http://localhost:3000/users",
-        method: "POST",
-        data: {
-            name:'infoshare',
-            username:'isa'
-        },
+        url: "http://localhost:3000/users/35",
+        method: "GET",
         dataType: "json",
         // http status = 2xx
-        success: function(result, status, response){
-            console.log('Witamy użytkownika: ', result.name);
+        success: function (result, status, response) {
+            console.log(result, status, response);
+//            console.log(result.NAME, result.EMAIL, response.status);
         },
         // http status != 2xx
-        error: function(res) {
-            console.log('Użytkownik nie został założony (status=', res.status);
+        error: function (res) {
+            console.log('-- error --', res)
         }
     });
 
+    console.log('1');
+    $('button').click(function (event) {
+        event.preventDefault();
 
+        console.log('2');
+        $('button').attr('disabled', 'disabled');
+        $.ajax({
+            url: "http://localhost:3000/users",
+            method: "POST",
+            data: {
+                name: 'infoshare',
+                username: $('input[name=username]').val()
+            },
+            dataType: "json",
+            // http status = 2xx
+            success: function (result, status, response) {
+                console.log('3');
+//                console.log('Witamy użytkownika: ', result.username);
+                $('p').text('Cześć id='+result.id);
+                $('button').removeAttr('disabled');
+            },
+            // http status != 2xx
+            error: function (res) {
+                console.log('4');
+//                console.log('Użytkownik nie został założony (status=', res.status);
+            }
+        });
+        console.log('5');
+    });
+    console.log('6');
 
 </script>
-
 
 
 </body>

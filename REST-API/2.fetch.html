@@ -7,6 +7,38 @@
 <body>
 
 <script>
+
+    fetch('http://localhost:3000/users/B1IzYG0rb', {
+        method: 'DELETE'
+    }).then(function(response) {
+//        console.log('response DELETE', response);
+        return response.json();
+    }).then(function(data) {
+        console.log('delete', data);
+    }).catch(function(error) {
+        console.log('error-delete', error);
+    });
+
+
+
+
+
+    fetch('http://localhost:3000/users/?_limit=300&_start=20', {
+        method: 'GET'
+    }).then(function(response) {
+//        console.log('response GET', response);
+        return response.json();
+    }).then(function(data) {
+        console.log('get', data);
+        console.log('Witaj', data[5].name)
+    }).catch(function(error) {
+        console.log('error-get', error);
+    });
+
+
+
+
+
     fetch('http://localhost:3000/users', {
         method: 'POST',
         headers: {
@@ -17,23 +49,11 @@
             username: 'isa'
         })
     }).then(function(response) {
+//        console.log('response POST', response)
         return response.json();
     }).then(function(data) {
         console.log('post', data);
     });
-
-
-    fetch('http://localhost:3000/users/501239871238', {
-        method: 'GET'
-    }).then(function(response) {
-        return response.json();
-    }).then(function(data) {
-        console.log('get', data);
-    }).catch(function(error) {
-        console.log('error-get', error);
-    });
-
-
 
 
 </script>
