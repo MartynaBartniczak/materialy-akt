@@ -82,6 +82,26 @@
     });
 
 
+    function switchForm(data) {
+        $('input[name=id]').val(data.id || '');
+        $('input[name=name]').val(data.name || '');
+        $('input[name=username]').val(data.username || '');
+        $('input[name=email]').val(data.email || '');
+
+        if (data.id) {
+            $('#addHeader').hide();
+            $('#editHeader').show();
+            $('#addBtn').hide();
+            $('#saveBtn').show();
+        }
+        else {
+            $('#addHeader').show();
+            $('#editHeader').hide();
+            $('#addBtn').show();
+            $('#saveBtn').hide();
+        }
+    }
+
 
     $('#userList').on('click', '.editBtn', function () {
         var editId = $(this).parent().parent().children(':first-of-type').text();
@@ -90,15 +110,7 @@
         }).then(function (response) {
             return response.json();
         }).then(function (data) {
-            $('input[name=id]').val(data.id);
-            $('input[name=name]').val(data.name);
-            $('input[name=username]').val(data.username);
-            $('input[name=email]').val(data.email);
-
-            $('#addHeader').hide();
-            $('#editHeader').show();
-            $('#addBtn').hide();
-            $('#saveBtn').show();
+            switchForm(data);
         });
     });
 
@@ -122,16 +134,18 @@
             return response.json();
         }).then(function(data) {
             console.log('post', data);
+            switchForm({});
             loadTable();
         });
     })
 
 
-    $('#addBtn').click(function(event) {
+    $('#saveBtn').click(function(event) {
         event.preventDefault();
 
-        fetch('http://localhost:3000/users', {
-            method: 'POST',
+        var editId = $('input[name=id]').val();
+        fetch('http://localhost:3000/users/'+editId, {
+            method: 'PATCH',
             headers: {
                 'Content-Type': 'application/json'
             },
@@ -143,7 +157,8 @@
         }).then(function(response) {
             return response.json();
         }).then(function(data) {
-            console.log('post', data);
+            console.log('patch', data);
+            switchForm({});
             loadTable();
         });
     })
