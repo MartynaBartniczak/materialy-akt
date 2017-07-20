@@ -83,6 +83,24 @@
 
 
 
+    $('#userList').on('click', '.editBtn', function () {
+        var editId = $(this).parent().parent().children(':first-of-type').text();
+        fetch('http://localhost:3000/users/' + editId, {
+            method: 'GET'
+        }).then(function (response) {
+            return response.json();
+        }).then(function (data) {
+            $('input[name=id]').val(data.id);
+            $('input[name=name]').val(data.name);
+            $('input[name=username]').val(data.username);
+            $('input[name=email]').val(data.email);
+
+            $('#addHeader').hide();
+            $('#editHeader').show();
+            $('#addBtn').hide();
+            $('#saveBtn').show();
+        });
+    });
 
 
 
@@ -107,6 +125,29 @@
             loadTable();
         });
     })
+
+
+    $('#addBtn').click(function(event) {
+        event.preventDefault();
+
+        fetch('http://localhost:3000/users', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                name: $('input[name=name]').val(),
+                username: $('input[name=username]').val(),
+                email: $('input[name=email]').val(),
+            })
+        }).then(function(response) {
+            return response.json();
+        }).then(function(data) {
+            console.log('post', data);
+            loadTable();
+        });
+    })
+
 
 
 </script>
