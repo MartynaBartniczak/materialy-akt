@@ -52,12 +52,24 @@
                     .append($('<td>').text(user.name))
                     .append($('<td>').text(user.username))
                     .append($('<td>').text(user.email))
-                    .append('<button>E</button><button>D</button>')
+                    .append('<td><button class="editBtn">E</button><button class="delBtn">D</button></td>')
             );
         });
+        $('.delBtn').click(function() {
+            var delId = $(this).parent().parent().children(':first-of-type').text();
+            fetch('http://localhost:3000/users/'+delId, {
+                method: 'DELETE'
+            }).then(function(response) {
+                return response.json();
+            }).then(function(data) {
+                console.log('usuniety user '+delId);
+            });
+        });
+
     }).catch(function(error) {
         console.log('error-get', error);
     });
+
 
 
 
