@@ -82,6 +82,33 @@
     });
 
 
+
+
+
+
+
+    $('#addBtn').click(function(event) {
+        event.preventDefault();
+
+        fetch('http://localhost:3000/users', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                name: $('input[name=name]').val(),
+                username: $('input[name=username]').val(),
+                email: $('input[name=email]').val(),
+            })
+        }).then(function(response) {
+            return response.json();
+        }).then(function(data) {
+            console.log('post', data);
+            loadTable();
+        });
+    })
+
+
 </script>
 
 </body>
