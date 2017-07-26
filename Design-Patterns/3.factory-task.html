@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>3.factory-task</title>
+</head>
+<style type="text/css">
+	.fill 			{ width: 90%; }
+	.red .fill 	{ background-color: red; }
+	.blue .fill { background-color: blue; }
+	.green .fill { background-color: green; }
+</style>
+
+<body>
+
+	<table id="table">
+		<tr>
+			<th colspan="2">ZA POMOCĄ HTML</th>
+		</tr>
+		<tr class="red">
+			<td>red</td>
+			<td class="fill"></td>
+		</tr>
+		<tr class="red">
+			<td>red</td>
+			<td class="fill"></td>
+		</tr>
+		<tr class="red">
+			<td>red</td>
+			<td class="fill"></td>
+		</tr>
+		<tr class="red">
+			<td>red</td>
+			<td class="fill"></td>
+		</tr>
+		<tr class="blue">
+			<td>blue</td>
+			<td class="fill"></td>
+		</tr>
+		<tr class="red">
+			<td>red</td>
+			<td class="fill"></td>
+		</tr>
+		<tr class="blue">
+			<td>blue</td>
+			<td class="fill"></td>
+		</tr>
+		<tr class="green">
+			<td>green</td>
+			<td class="fill"></td>
+		</tr>
+	</table>
+
+
+	<script type="text/javascript">
+		// --------------------------------------------------------------
+		// ZADANIE - Napisz kod fabryki generującej kolorowe wiersze tabeli, która zostanie
+		//			 użyta przez napisany na końcu pliku kod - którego nie wolno zmieniać.
+
+
+		/// ... tutaj możesz pisać ...
+
+
+		// --------------------------------------------------------------
+		// PONIŻSZEGO KODU NIE WOLNO MODYFIKOWAĆ
+		// To jest kod używający fabryki, którą nalezy stworzyć
+
+		var myRowFactory = new RowFactory();
+		var table = document.getElementById('table');
+		table.innerHTML += '<tr><th colspan="2">ZA POMOCĄ JAVASCRIPT</th></tr>';
+		table.innerHTML += myRowFactory.makeRow('red').getHTML();
+		table.innerHTML += myRowFactory.makeRow('red').getHTML();
+		table.innerHTML += myRowFactory.makeRow('red').getHTML();
+		table.innerHTML += myRowFactory.makeRow('red').getHTML();
+		table.innerHTML += myRowFactory.makeRow('blue').getHTML();
+		table.innerHTML += myRowFactory.makeRow('red').getHTML();
+		table.innerHTML += myRowFactory.makeRow('blue').getHTML();
+		table.innerHTML += myRowFactory.makeRow('green').getHTML();
+	</script>
+
+</body>
+
+</html>

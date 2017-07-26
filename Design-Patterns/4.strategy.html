@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>4.strategy</title>
+    <script type="text/javascript">
+
+    // walidator, który wykorzystuje wzorzec strategii
+    var validator = {
+      types:{},
+      messages:[],
+      config:{},
+
+      validate:function (data) {
+        var i, type, checker;
+        this.messages = [];
+        for (i in data) {
+          type = this.config[i];
+          checker = this.types[type];
+          if (!type)
+            continue;
+
+          if (!checker)
+            throw {
+              name:"ValidationError",
+              message:"No handler to validate type " + type
+            };
+
+          if (!checker.validate(data[i]))
+            this.messages.push("Invalid value for *" + i + "*, " + checker.instructions);
+        }
+        return this.hasErrors();
+      },
+
+      hasErrors:function () {
+        return this.messages.length !== 0;
+      }
+    };
+
+
+    // 1. dane wejściowe
+
+
+    // 2. konfiguracja walidatora
+
+
+    // 3. walidator isNonEmpty - sprawdzenie, czy podano jakąś wartość (validate() oraz instructions)
+
+
+    // 4. walidator isNumber - sprawdzenie, czy wartość jest liczbą
+
+
+    // 5. walidator isAlphaNum - sprawdzenie, czy wartość zawiera jedynie litery i cyfry
+
+
+    // 6. wykonanie walidacji i wyświetlenie błędów
+
+
+    </script>
+</head>
+<body>
+
+
+</body>
+</html>

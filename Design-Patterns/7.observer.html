@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>7.observer</title>
+    <script type="text/javascript">
+
+
+// defunicja konstruktora
+var Observable = function() {
+  this.subscribers = [];
+}
+
+
+Observable.prototype = {
+  // 1. metoda subscribe(person)
+
+
+  // 2. metoda unsubscribe(person)
+
+
+  // 3. metoda publish(data)
+
+
+};
+
+// 4. definicja obserwatorow (name, receiveData(data))
+
+
+
+
+// użycie klasy Observable
+observable = new Observable();
+observable.subscribe(JanKowalski);
+observable.subscribe(JoannaKowalska);
+observable.publish('PZU w cenie 145.30 zł');
+
+document.write(observable.unsubscribe(JanKowalski) + " Wypisany<br />");
+observable.publish('PZU w cenie 145.33 zł');
+
+
+    </script>
+</head>
+<body>
+
+
+</body>
+</html>

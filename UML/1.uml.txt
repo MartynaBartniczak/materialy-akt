@@ -1,0 +1,29 @@
+Kancelaria prawnicza
+
+Pewna kancelaria prawnicza postanowiła usprawnić obsługę prowadzonych przez nią spraw poprzez wykorzystanie systemu informatycznego. Poniżej znajduje się lista wymagań użytkownika, w oparciu o który przeprowadzimy modelowanie pojęciowe:
+
+1. Należy przechowywać następujące dane o klientach i prawnikach: imiona (nie więcej niż dwa), nazwisko, nazwisko panieńskie (tylko dla kobiet), adres i telefon.
+
+2. Dla prawników ma być przechowywany także staż pracy w zawodzie.
+
+3. Dla spraw prowadzonych przez kancelarię mają być pamiętane informacje, takie jak: data rozpoczęcia i data zakończenia sprawy, czego dotyczyła, czy zakończyła się sukcesem, dane klienta, który ją zlecił oraz jacy prawnicy zajmowali się sprawą.
+
+4. Mają być przechowywane daty i miejsca wszystkich rozpraw związanych ze sprawą. Każdej rozprawie ma być przypisywany identyfikator, unikatowy w ramach danej sprawy.
+
+5. Ponieważ możliwa jest sytuacja, że prawnik zostanie odsunięty od sprawy jeszcze w trakcie jej trwania, ma być pamiętane od kiedy do kiedy prawnik zajmował się daną sprawą.
+
+6. W danym momencie czasu prawnik może być przydzielony tylko do jednej sprawy.
+
+7. Należy uwzględnić fakt, że prawnik może być klientem kancelarii, ale wtedy nie może zajmować się sprawami, które zlecił.
+
+8. Sprawa może być anulowana w dowolnym momencie; dane sprawy anulowanej nie mają być przechowywane.
+
+9. Dane sprawy mają być przechowywane przez 10 lat od momentu jej zakończenia.
+
+10. Oczekuje się, że system będzie wspomagał pracę kancelarii przy:
+      - Rejestrowaniu spraw.
+      - Przydzielaniu prawników do spraw.
+      - Odsuwaniu prawników od spraw.
+      - Rejestracji rozpraw.
+      - Rejestracji zakończenia spraw.
+      - Ustalaniu listy spraw, które w zadanym okresie czasu zakończyły się sukcesem.

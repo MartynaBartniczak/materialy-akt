@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+    <title>5.strategy-task</title>
+	<style type="text/css">
+p.error {
+  font-weight: bold;
+  color: red;
+}
+p.warning {
+  font-weight: bold;
+  color: gold;
+}
+p.info {
+  color: blue;
+}	
+	</style>
+	<script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+	<script type="text/javascript">
+
+// --------------------------------------------------------------
+// ZADANIE - Przerób poniższy kod, aby używał wzorca Strategii
+
+
+$(document).ready(function() {
+  $('input:radio').change(function() {
+    var checkedVal = $(this).val();
+
+    switch (checkedVal) {
+      case 'error':
+        $('input[type="button"]').click(function() {
+          $('p').attr('class', '')
+            .addClass('error')
+            .text('Błąd');
+        });
+        break;
+      case 'warning':
+        $('input[type="button"]').click(function() {
+          $('p').attr('class', '')
+            .addClass('warning')
+            .text('Ostrzeżenie');
+        });
+        break;
+      case 'info':
+        $('input[type="button"]').click(function() {
+          $('p').attr('class', '')
+            .addClass('info')
+            .text('Informacja');
+        });
+        break;
+    }
+  });
+});
+
+	
+// --------------------------------------------------------------
+	
+	</script>	
+</head>
+
+<body>
+	<fieldset>
+		<label for="error">Błąd</label>
+		<input type="radio" value="error" name="selection" />
+		<br />
+		<label for="warnirng">Ostrzeżenie</label>
+		<input type="radio" value="warning" name="selection" />
+		<br />
+		<label for="info">Informacja</label>
+		<input type="radio" value="info" name="selection" />
+		<br />
+	</fieldset>
+	<input type="button" value="Wyswietl" />
+	<p>---</p>
+</body>
+
+</html>
