@@ -5,27 +5,54 @@
     <title>6.iterator</title>
     <script type="text/javascript">
 
+//var IteratorClass = function(data) {
+//    this.index = 0;
+//    this.data = data;
+//
+//    this.next = function() {
+//        var temp = this.data[this.index];
+//        this.index++;
+//        return temp;
+//    }
+//}
+//
+//var test = new IteratorClass(['a', 'b', 'c', 'd', 'e', 'f']);
+//test.next();
+
 
 var iterator = {
   // 1. atrybuty iteratora (index, data)
-
+    index : 0,  // wskaźnik
+    data : ['a', 'b', 'c', 'd', 'e', 'f'], // dane do iterowania
 
   // 2. metoda next()
-
+    next: function() {
+        if (this.hasNext())
+            return this.data[++this.index];
+    },
 
   // 3. metoda hasNext()
-
+    hasNext: function() {
+        return this.data[this.index+1] ? true : false;
+    },
 
   // 4. metoda rewind()
-
+    rewind: function() {
+        this.index = 0;
+    },
 
   // 5. metoda current()
-
+    current: function() {
+        return this.data[this.index];
+    }
 
 };
 
-// 6. przejscie iteratora po wszystkich elementach
 
+// 6. przejscie iteratora po wszystkich elementach
+console.log(iterator.current());
+while (iterator.hasNext())
+    console.log(iterator.next());
 
 
     </script>

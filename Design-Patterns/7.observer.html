@@ -13,19 +13,44 @@ var Observable = function() {
 
 
 Observable.prototype = {
-  // 1. metoda subscribe(person)
 
+  // 1. metoda subscribe(person) - do zapisu OBSERWUJACEGO
+    subscribe: function(person) {
+        this.subscribers.push(person);
+    },
 
-  // 2. metoda unsubscribe(person)
+  // 2. metoda unsubscribe(person) - do rezygnacji OBSERWUJACEGO
+    unsubscribe: function(person) {
+        this.subscribers = this.subscribers.filter(function(item) {
+            return item != person;
+        });
+        return person.name;
+    },
 
-
-  // 3. metoda publish(data)
-
+  // 3. metoda publish(data) - wysłanie komunikatu do wszystkich OBSERWUJĄCYCH
+    publish: function(message) {
+        this.subscribers.forEach(function (person) {
+            person.receiveData(message);
+        });
+    }
 
 };
 
 // 4. definicja obserwatorow (name, receiveData(data))
-
+JanKowalski = {
+    name: 'Jan Kowalski',
+    // metoda o tej samej nazwie dla każdego OBSERWUJĄCEGO
+    receiveData: function(data) {
+        console.log(data);
+    }
+}
+JoannaKowalska = {
+    name: 'Joanna Kowalska',
+    // metoda o tej samej nazwie dla każdego OBSERWUJĄCEGO
+    receiveData: function(data) {
+        console.log(data);
+    }
+}
 
 
 

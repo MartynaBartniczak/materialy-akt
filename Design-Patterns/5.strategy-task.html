@@ -24,33 +24,69 @@ p.info {
 // ZADANIE - Przerób poniższy kod, aby używał wzorca Strategii
 
 
+// -- część reużywalna !!
+
+// 1. poszczegolne strategie
+var Message = function() {}
+Message.prototype.show = function() {
+    alert('zaimplementuj metode show()');
+}
+
+var ErrorMessage = function() {}
+ErrorMessage.prototype = new Message();
+ErrorMessage.prototype.show = function() {
+    $('p').attr('class', '')
+        .addClass('error')
+        .text('Błąd');
+}
+
+function WarningMessage() {}
+WarningMessage.prototype = new Message();
+WarningMessage.prototype.show = function() {
+    $('p').attr('class', '')
+        .addClass('warning')
+        .text('Ostrzeżenie');
+}
+
+function InfoMessage() {}
+InfoMessage.prototype = new Message();
+InfoMessage.prototype.show = function() {
+    $('p').attr('class', '')
+        .addClass('info')
+        .text('Informacja');
+}
+
+
+function RandomMessage() {}
+RandomMessage.prototype = new Message();
+RandomMessage.prototype.show = function() {
+    $('p').attr('class', '')
+        .text('LOSOWA WIADOMOŚC');
+}
+
+
+
+
+// -- cześć NIE reużywalna
+
+// 2. konfiguracja
+var config = {
+    'error' : new ErrorMessage(),
+    'warning': new WarningMessage(),
+    'info': new InfoMessage(),
+	'test': new RandomMessage()
+}
+// ... możemy skorzystać z fabryki do tworzenia obiektów poszczegolnych STRATEGII
+
+
+// 3. kod uruchamiajacy strategie
+
+
+
 $(document).ready(function() {
   $('input:radio').change(function() {
     var checkedVal = $(this).val();
-
-    switch (checkedVal) {
-      case 'error':
-        $('input[type="button"]').click(function() {
-          $('p').attr('class', '')
-            .addClass('error')
-            .text('Błąd');
-        });
-        break;
-      case 'warning':
-        $('input[type="button"]').click(function() {
-          $('p').attr('class', '')
-            .addClass('warning')
-            .text('Ostrzeżenie');
-        });
-        break;
-      case 'info':
-        $('input[type="button"]').click(function() {
-          $('p').attr('class', '')
-            .addClass('info')
-            .text('Informacja');
-        });
-        break;
-    }
+    config[checkedVal].show();
   });
 });
 
@@ -70,6 +106,9 @@ $(document).ready(function() {
 		<br />
 		<label for="info">Informacja</label>
 		<input type="radio" value="info" name="selection" />
+		<br />
+		<label for="test">Test</label>
+		<input type="radio" value="test" name="selection" />
 		<br />
 	</fieldset>
 	<input type="button" value="Wyswietl" />

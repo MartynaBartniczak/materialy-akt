@@ -7,9 +7,45 @@
 
 
 // 1. czy obiekty są identyczne
+var person1 = {
+    name: 'Jan'
+}
+var person2 = {
+    name: 'Kasia'
+}
+
+var a = 1, b = 1;
 
 
 // 2. przyklad klasy singletonowej "Hero"
+//Hero.counter = 0;
+//function Hero(name) {
+//    this.name = name;
+////    this.counter = 0;
+//    Hero.counter++;
+//}
+
+function Hero(name) {
+    // sprawdzenie czy byl juz tworzony obiekt tej klasy
+    if (typeof Hero.instance === 'object') {
+        return Hero.instance;
+    }
+
+    // wypełnianie atrybutów nowego obiektu
+    this.name = name;
+
+    // zapamiętanie pierwszego obiektu
+    Hero.instance = this;
+    return this;
+}
+
+
+
+var hero1 = new Hero('Jaroslaw');
+var hero2 = new Hero('Andrzej');
+
+console.log(hero1, hero2, hero1==hero2);
+
 
 
 

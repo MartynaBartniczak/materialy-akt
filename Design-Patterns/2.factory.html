@@ -7,12 +7,57 @@
 
 
 // 1. przykład fabryki na podstawie "new Object()"
+var liczba = new Object(10);
+var tekst = new Object('tekst');
+var czy = new Object(true);
+var tablica = new Object([]);
 
+
+console.log(liczba, tekst, czy, tablica);
 
 // 2. fabryka broni (Sword, Bow, ...)
+function WeaponFactory() {} // tworzenie konstruktor klasy
+WeaponFactory.prototype.makeWeapon = function(warrior) {
+    // w zaleznosci od wartosci parametru stworz obiekt odpowiedniej klasy i go zwróć
+    switch (warrior) {
+        case 'lucznik':
+            return new Bow();
+        case 'rycerz':
+            return new Sword();
+        case 'zolnierz':
+            return new Gun();
+        default:
+            alert('NIE MA TAKIEGO WOJOWNIKA');
+            return;
+    }
+}
+
+
+// klasy produktowe
+function Sword() {
+    this.name = 'Miecz';
+    this.attack = function() {
+        console.log('==>')
+    }
+}
+function Bow() {
+    this.name = 'Łuk';
+    this.attack = function() {
+        console.log('===========>')
+    }
+}
+function Gun() {
+    this.name = 'Karabin';
+    this.attack = function() {
+        console.log('=======================================>')
+    }
+}
 
 
 // 3. użycie fabryki broni "WeaponFactory"
+var myWeaponFactory = new WeaponFactory();
+var weapon = myWeaponFactory.makeWeapon('zolnierz');
+weapon.attack();
 
 
 

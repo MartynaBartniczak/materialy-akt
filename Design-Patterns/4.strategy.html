@@ -39,22 +39,50 @@
 
 
     // 1. dane wejściowe
+    var data = {
+        first_name:"Super",
+        last_name:"Man",
+        age:20,
+        username:"oO"
+    };
+
+
+    // 3. walidator isNonEmpty - sprawdzenie, czy podano jakąś wartość (validate() oraz instructions)
+    validator.types.isNonEmpty = {
+        validate:function (value) {
+            return value !== "";
+        },
+        instructions:"the value cannot be empty"
+    };
+
+    // 4. walidator isNumber - sprawdzenie, czy wartość jest liczbą
+    validator.types.isNumber = {
+        validate:function (value) {
+            return !isNaN(value);
+        },
+        instructions:"the value can only be a valid number, e.g. 1, 3.14 or 2010"
+    };
+
+    // 5. walidator isAlphaNum - sprawdzenie, czy wartość zawiera jedynie litery i cyfry
+    validator.types.isAlphaNum = {
+        validate:function (value) {
+            return !/[^a-z0-9]/i.test(value);
+        },
+        instructions:"the value can only contain characters and numbers, no special symbols"
+    };
 
 
     // 2. konfiguracja walidatora
-
-
-    // 3. walidator isNonEmpty - sprawdzenie, czy podano jakąś wartość (validate() oraz instructions)
-
-
-    // 4. walidator isNumber - sprawdzenie, czy wartość jest liczbą
-
-
-    // 5. walidator isAlphaNum - sprawdzenie, czy wartość zawiera jedynie litery i cyfry
-
-
+    validator.config = {
+        first_name:'isNonEmpty',
+        age:'isNumber',
+        username:'isAlphaNum'
+    };
     // 6. wykonanie walidacji i wyświetlenie błędów
-
+    validator.validate(data);
+    if (validator.hasErrors()) {
+        console.log(validator.messages.join("\n"));
+    }
 
     </script>
 </head>

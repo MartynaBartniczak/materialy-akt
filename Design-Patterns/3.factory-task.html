@@ -59,7 +59,40 @@
 		//			 użyta przez napisany na końcu pliku kod - którego nie wolno zmieniać.
 
 
-		/// ... tutaj możesz pisać ...
+		function RowFactory() {}
+		RowFactory.prototype.makeRow = function(color) {
+		    switch (color) {
+				case 'red':
+				    return new ErrorRow();
+				case 'blue':
+				    return new InfoRow();
+				case 'green':
+                    return new SuccessRow();
+			}
+		}
+
+
+		var Row = function(a,b) {}
+		Row.prototype.getHTML = function() {
+            return '<tr class="'+this.color+'"><td>'+this.color+'</td><td class="fill"></td></tr>';
+        }
+
+		function ErrorRow() {
+		    this.color = 'red';
+		}
+		ErrorRow.prototype = new Row();
+
+		function SuccessRow() {
+            this.color = 'green';
+		}
+        SuccessRow.prototype = new Row();
+
+		function InfoRow() {
+            this.color = 'blue';
+		}
+        InfoRow.prototype = new Row();
+
+
 
 
 		// --------------------------------------------------------------
